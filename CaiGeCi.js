@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const maxSize = 24;
     let fontSize = Math.min(Math.max(minSize, width / 40), maxSize);
     document.body.style.fontSize = `${fontSize}px`;
+    document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
     var lyric = `小雨
