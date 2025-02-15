@@ -7,44 +7,26 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `小雨
-黄龄
-夏夜低沉的云雾里 往事更迭一季
-闷不吭声的浮萍 摇曳着欲说还静
-窗帘它揉碎了灯影 揉不灭的心意
-而你微笑沉默如谜 这一刻最难译
-微风悄悄拨弄思绪 山谷窃窃低语
-河水洗掉了足印 回忆都成了透明
-不忍心拆穿的姓名 模糊一段身影
-把往事都埋进竹林 埋掉一切痕迹
-一点一滴淅淅沥沥一句又一句
-年轮刻下的伏笔 是我们的秘密
-一曲一曲断断续续是什么结局
-等待传来的回音 留在梦里
-忽而雷声隐隐 如你哭泣
-浸泡时间里 寂寞侵袭
-发不出声音 吞入海底
-所有的思念 变成眼睛
-滴滴答滴滴的雨下起 如你哭泣
-嘲弄我压抑都动了心
-呼啸而来 滚烫的雨滴
-浇打我身体 烙上红印
-夏夜低沉的云雾里 往事更迭一季
-闷不吭声的浮萍 摇曳着欲说还静
-窗帘它揉碎了灯影 揉不灭的心意
-而你微笑沉默如谜 这一刻最难译
-一点一滴淅淅沥沥一句又一句
-年轮刻下的伏笔 是我们的秘密
-一曲一曲断断续续是什么结局
-等待传来的回音 留在梦里
-忽而雷声隐隐 如你哭泣
-浸泡时间里 寂寞侵袭
-发不出声音 吞入海底
-所有的思念 变成眼睛
-滴滴答滴滴的雨下起 如你哭泣
-嘲弄我压抑都动了心
-呼啸而来 滚烫的雨滴
-浇打我身体 烙上红印`;
+    var lyric = `盼暖春来
+刺猬
+每年寒冬深夜时漫天飞雪
+深秋时节飘落叶昏黄漫天
+夏日炎炎时我也没了直觉
+只盼来年暖春时节鲜花 开遍漫山野
+眼眶晃动泪水与你的照片
+融化了的飞雪掠过双眉间
+复如其来的悲伤打湿落叶
+只盼来年春暖花开时 我真能有改变
+又是一年春雪 瑞丰年
+开心的每张笑脸 染红满了天
+绣窗花剪 红红的大挂鞭
+剧终时节 分阅中恋
+多少失眠夜
+相伴步旅田园
+思念悬炫 梦幻夜 寥同缘
+欲无尽夜 痛迂回 绕空念
+波光映月 随心轮 妙瞳圆
+驳爱斑悬 缘启灭 漂融血`;
     // var lyric = `测试歌曲`;
     var rows = lyric.split(/\n/);
     const chineseRegex = /^[\u4e00-\u9fa5]+$/;
@@ -76,6 +58,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var guessNum = 0;
     var failChars = ''
     document.getElementById('confirm').addEventListener('click', function() {
+        guessProcess();
+    });
+    document.getElementById('guess').onkeydown = function(event) {
+        if (event.key === 'Enter') {
+            guessProcess();
+        }
+    };
+
+    function guessProcess() {
         document.getElementById('success').style.display = 'none';
         document.getElementById('fail').style.display = 'none';
         document.getElementById('repeat').style.display = 'none';
@@ -134,5 +125,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
-    });
+    }
 });
