@@ -1,61 +1,49 @@
 document.addEventListener('DOMContentLoaded', function () {
     const width = window.innerWidth;
-    let fontSize = 16;
-
-    if (width < 600) {
-        fontSize = 14;
-    } else if (width >= 600 && width < 900) {
-        fontSize = 18;
-    } else {
-        fontSize = 20;
-    }
+    const minSize = 14;
+    const maxSize = 24;
+    let fontSize = Math.min(Math.max(minSize, width / 40), maxSize);
     document.body.style.fontSize = `${fontSize}px`;
-    document.getElementById('vw').textContent = width;
+    document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `稻香
-周杰伦
-对这个世界 如果你有太多的抱怨
-跌倒了 就不敢继续往前走
-为什么 人要这么的脆弱 堕落
-请你打开电视看看
-多少人 为生命在努力勇敢的走下去
-我们是不是该知足
-珍惜一切 就算没有拥有
-还记得 你说家是唯一的城堡
-随着稻香 河流继续奔跑
-微微笑 小时候的梦我知道
-不要哭 让萤火虫带着你逃跑
-乡间的歌谣 永远的依靠
-回家吧 回到最初的美好
-不要这么容易 就想放弃
-就像我说的
-追不到的梦想 换个梦不就得了
-为自己的人生鲜艳上色
-先把爱涂上喜欢的颜色
-笑一个吧 功成名就不是目的
-让自己快乐快乐 这才叫做意义
-童年的纸飞机
-现在终于飞回我手里
-所谓的那快乐
-赤脚在田里追蜻蜓 追到累了
-偷摘水果 被蜜蜂给叮到怕了
-谁在偷笑呢
-我靠着稻草人 吹着风 唱着歌 睡着了
-哦 哦 午后吉他在虫鸣中更清脆
-哦 哦 阳光洒在路上就不怕心碎
-珍惜一切 就算没有拥有
-还记得 你说家是唯一的城堡
-随着稻香 河流继续奔跑
-微微笑 小时候的梦我知道
-不要哭 让萤火虫带着你逃跑
-乡间的歌谣 永远的依靠
-回家吧 回到最初的美好
-还记得 你说家是唯一的城堡
-随着稻香 河流继续奔跑
-微微笑 小时候的梦我知道
-不要哭 让萤火虫带着你逃跑
-乡间的歌谣 永远的依靠
-回家吧 回到最初的美好`;
+    var lyric = `小雨
+黄龄
+夏夜低沉的云雾里 往事更迭一季
+闷不吭声的浮萍 摇曳着欲说还静
+窗帘它揉碎了灯影 揉不灭的心意
+而你微笑沉默如谜 这一刻最难译
+微风悄悄拨弄思绪 山谷窃窃低语
+河水洗掉了足印 回忆都成了透明
+不忍心拆穿的姓名 模糊一段身影
+把往事都埋进竹林 埋掉一切痕迹
+一点一滴淅淅沥沥一句又一句
+年轮刻下的伏笔 是我们的秘密
+一曲一曲断断续续是什么结局
+等待传来的回音 留在梦里
+忽而雷声隐隐 如你哭泣
+浸泡时间里 寂寞侵袭
+发不出声音 吞入海底
+所有的思念 变成眼睛
+滴滴答滴滴的雨下起 如你哭泣
+嘲弄我压抑都动了心
+呼啸而来 滚烫的雨滴
+浇打我身体 烙上红印
+夏夜低沉的云雾里 往事更迭一季
+闷不吭声的浮萍 摇曳着欲说还静
+窗帘它揉碎了灯影 揉不灭的心意
+而你微笑沉默如谜 这一刻最难译
+一点一滴淅淅沥沥一句又一句
+年轮刻下的伏笔 是我们的秘密
+一曲一曲断断续续是什么结局
+等待传来的回音 留在梦里
+忽而雷声隐隐 如你哭泣
+浸泡时间里 寂寞侵袭
+发不出声音 吞入海底
+所有的思念 变成眼睛
+滴滴答滴滴的雨下起 如你哭泣
+嘲弄我压抑都动了心
+呼啸而来 滚烫的雨滴
+浇打我身体 烙上红印`;
     // var lyric = `测试歌曲`;
     var rows = lyric.split(/\n/);
     const chineseRegex = /^[\u4e00-\u9fa5]+$/;
@@ -75,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 charsMap[charsIndex] = rows[i][j];
                 charsIndex++;
                 char.textContent = '00'
-                char.className = 'zi hide';
+                textCell.className = 'zi hide';
             } else {
                 char.textContent = rows[i][j];
             }
@@ -106,13 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('guessNum').textContent = guessNum;
                 guessHistory += guessChar;
                 var matchNum = 0;
-                let chars = table.getElementsByClassName('zi');
-                for (let i = 0; i < chars.length; i++) {
-                    if (charsMap[chars[i].id] == guessChar) {
+                let cells = table.getElementsByClassName('zi');
+                for (let i = 0; i < cells.length; i++) {
+                    let char = cells[i].querySelector("span");
+                    if (charsMap[char.id] == guessChar) {
                         matchNum++;
-                        chars[i].textContent = guessChar;
-                        chars[i].classList.remove('hide');
-                        chars[i].classList.add('right');
+                        char.textContent = guessChar;
+                        cells[i].classList.remove('hide');
+                        cells[i].classList.add('right');
+                        cells[i].style.backgroundColor = 'rgb(154, 211, 239)';
+                    } else if (cells[i].classList.contains('right')) {
+                        cells[i].style.backgroundColor = 'transparent';
                     }
                 }
                 if (matchNum == 0) {
@@ -127,13 +119,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(titleLeft);
                     if (titleLeft.length == 0) {
                         document.getElementById('done').style.display = 'inline';
-                        let chars = table.getElementsByClassName('zi');
-                        for (let i = 0; i < chars.length; i++) {
-                            if (chars[i].classList.contains('hide')) {
-                                chars[i].textContent = charsMap[chars[i].id];
-                                chars[i].style.backgroundColor = 'rgb(255, 127, 127)';
+                        let cells = table.getElementsByClassName('zi');
+                        for (let i = 0; i < cells.length; i++) {
+                            if (cells[i].classList.contains('hide')) {
+                                let char = cells[i].querySelector("span");
+                                char.textContent = charsMap[char.id];
+                                cells[i].style.backgroundColor = 'transparent';
                             } else {
-                                chars[i].style.backgroundColor = 'rgb(152, 255, 155)';
+                                cells[i].style.backgroundColor = 'rgb(152, 255, 155)';
                             }
                         }
                     }

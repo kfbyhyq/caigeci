@@ -9,24 +9,29 @@
             place-items: center;
         }
         table {
+            border-spacing: 3px;
             /* font-size: 18px; */
-            border-collapse: collapse;
+            /* border-collapse: collapse; */
         }
         th, td {
-            border: 1px solid #000000;
-            padding: 2px;
+            padding: 0px;
             text-align: center;
+        }
+        .zi {
+            border: 1px solid #000000;
         }
         .hide {
             background-color: black;
         }
         button {
+            width: 50px;
+            height: 40px;
             /* font-size: 16px; */
             vertical-align: middle;
         }
         input {
-            width: 40px;
-            height: 24px;
+            width: 50px;
+            height: 40px;
             vertical-align: middle;
         }
     </style>
@@ -36,7 +41,6 @@
         <input id="guess">
         <button id="confirm">猜</button><br>
     </div>
-    <div id="vw"></div>
     <div id="success" style="display: none;">找到<span id="matchNum"></span>个！</div>
     <div id="fail" style="display: none;">没这个字！</div>
     <div id="repeat" style="display: none;">这个字猜过了！</div>
