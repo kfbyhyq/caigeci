@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const width = window.innerWidth;
+    let fontSize = 16;
+
+    if (width < 600) {
+        fontSize = 14;
+    } else if (width >= 600 && width < 900) {
+        fontSize = 18;
+    } else {
+        fontSize = 20;
+    }
+    document.body.style.fontSize = `${fontSize}px`;
+    document.getElementById('vw').textContent = width;
+
     var lyric = `稻香
 周杰伦
 对这个世界 如果你有太多的抱怨

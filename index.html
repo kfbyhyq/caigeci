@@ -4,12 +4,16 @@
     <title>猜！</title>
     <script src="CaiGeCi.js"></script>
     <style>
+        body {
+            display: grid;
+            place-items: center;
+        }
         table {
-            font-size: 18px;
+            /* font-size: 18px; */
             border-collapse: collapse;
         }
         th, td {
-            border: 0px solid #ffffff;
+            border: 1px solid #000000;
             padding: 2px;
             text-align: center;
         }
@@ -17,7 +21,7 @@
             background-color: black;
         }
         button {
-            font-size: 16px;
+            /* font-size: 16px; */
             vertical-align: middle;
         }
         input {
@@ -28,8 +32,11 @@
     </style>
 </head>
 <body>
-    <input id="guess">
-    <button id="confirm">猜</button><br>
+    <div>
+        <input id="guess">
+        <button id="confirm">猜</button><br>
+    </div>
+    <div id="vw"></div>
     <div id="success" style="display: none;">找到<span id="matchNum"></span>个！</div>
     <div id="fail" style="display: none;">没这个字！</div>
     <div id="repeat" style="display: none;">这个字猜过了！</div>
