@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 曾经志在四方少年羡慕南飞的雁
 各自奔前程的身影匆匆渐行渐远
 未来在哪里平凡啊谁给我答案
-那时陪伴我的人啊你们如今在何方
-我曾经爱过的人啊现在是什么模样
+那时陪伴我的人啊你们如今在何方我曾经爱过的人啊现在是什么模样
 当初的愿望实现了吗
 事到如今只好祭奠吗
 任岁月风干理想再也找不回真的我
@@ -139,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(titleLeft);
                     if (titleLeft.length == 0) {
                         document.getElementById('done').style.display = 'inline';
+                        document.getElementById('confirm').style.pointerEvents = 'none';
                         let cells = table.getElementsByClassName('zi');
                         for (let i = 0; i < cells.length; i++) {
                             if (cells[i].classList.contains('hide')) {
