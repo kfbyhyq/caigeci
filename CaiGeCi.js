@@ -7,53 +7,68 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `淘汰
-陈奕迅
-我说了所有的谎
-你全都相信
-简单的我爱你
-你却老不信
-你书里的剧情
-我不想上演
-因为我喜欢喜剧收尾
-我试过完美放弃
-的确很踏实
-醒来了 梦散了
-你我都走散了
-情歌的词何必押韵
-就算我是K歌之王
-也不见得把爱情唱得完美
-只能说我输了
-也许是你怕了
-我们的回忆没有皱褶
-你却用离开烫下句点
-只能说我认了
-你的不安赢得你信任
-我却得到你安慰的淘汰
-我试过完美放弃
-的确很踏实
-醒来了 梦散了
-你我都走散了
-情歌的词何必押韵
-就算我是K歌之王
-也不见得把爱情唱得完美
-只能说我输了
-也许是你怕了
-我们的回忆没有皱褶
-你却用离开烫下句点
-只能说我认了
-你的不安赢得你信任
-我却得到你安慰的淘汰
-只能说我输了
-也许是你怕了
-我们的回忆没有皱褶
-你却用离开烫下句点
-只能说我认了
-你的不安赢得你信任
-我却得到你安慰的淘汰`;
+    var lyric = `单身情歌
+林志炫
+抓不住爱情的我
+总是眼睁睁看它溜走
+世界上幸福的人到处有
+为何不能算我一个
+为了爱孤军奋斗
+早就吃够了爱情的苦
+在爱中失落的人到处有
+而我只是其中一个
+爱要越挫越勇
+爱要肯定执着
+每一个单身的人得看透
+想爱就别怕伤痛
+找一个最爱的 深爱的
+相爱的 亲爱的人
+来告别单身
+一个多情的 痴情的
+绝情的 无情的人
+来给我伤痕
+孤单的人那么多
+快乐的没有几个
+不要爱过了 错过了
+留下了单身的我
+独自唱情歌
+为了爱孤军奋斗
+早就吃够了爱情的苦
+在爱中失落的人到处有
+而我不是最后一个
+爱要越挫越勇
+爱要肯定执着
+每一个单身的人得看透
+想爱就别怕伤痛
+找一个最爱的 深爱的
+相爱的 亲爱的人
+来告别单身
+一个多情的 痴情的
+绝情的 无情的人
+来给我伤痕
+孤单的人那么多
+快乐的没有几个
+不要爱过了 错过了
+留下了单身的我
+独自唱情歌
+找一个最爱的 深爱的
+相爱的 亲爱的人
+来告别单身
+一个多情的 痴情的
+绝情的 无情的人
+来给我伤痕
+伤心的人那么多
+我应该勇敢地过
+不要爱过了 错过了
+留下了单身的我
+独自唱情歌
+这首真心的 痴心的
+伤心的单身情歌
+谁与我来和`;
     // var lyric = `测试歌曲`;
     var rows = lyric.split(/\n/);
     const chineseRegex = /^[\u4e00-\u9fa5]+$/;
+    const englishRegex = /^[A-Za-z]$/;
     let table = document.getElementById('displayTable');
     var charsMap = [];
     var charsIndex = 0;
@@ -65,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let j = 0; j < rows[i].length; j++) {
             var textCell = textRow.insertCell();
             var char = document.createElement('span');
-            if (chineseRegex.test(rows[i][j])) {
+            if (chineseRegex.test(rows[i][j]) || englishRegex.test(rows[i][j])) {
                 char.id = charsIndex;
                 charsMap[charsIndex] = rows[i][j];
                 charsIndex++;
