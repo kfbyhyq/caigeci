@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `老老男孩
+    var lyric = `老老老男孩
 筷子兄弟
 那是我日夜思念深深爱着的人呐
 到底我该如何表达
