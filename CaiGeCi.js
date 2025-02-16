@@ -7,57 +7,46 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `老男孩
-筷子兄弟
-那是我日夜思念深深爱着的人呐
-到底我该如何表达
-她会接受我吗
-也许永远都不会跟她说出那句话
-注定我要浪迹天涯
-怎么能有牵挂
-梦想总是遥不可及
-是不是应该放弃
-花开花落又是一季
-春天啊你在哪里
-青春如同奔流的江河
-一去不回来不及道别
-只剩下麻木的我没有了当年的热血
-看那漫天飘零的花朵
-在最美丽的时刻凋谢
-有谁会记得这世界她来过
-转眼过去多年世间多少离合悲欢
-曾经志在四方少年羡慕南飞的雁
-各自奔前程的身影匆匆渐行渐远
-未来在哪里平凡啊谁给我答案
-那时陪伴我的人啊你们如今在何方
-我曾经爱过的人啊现在是什么模样
-当初的愿望实现了吗
-事到如今只好祭奠吗
-任岁月风干理想再也找不回真的我
-抬头仰望这满天星河
-那时候陪伴我的那颗
-这里的故事你是否还记得
-生活像一把无情刻刀
-改变了我们模样
-未曾绽放就要枯萎吗
-我有过梦想
-青春如同奔流的江河
-一去不回来不及道别
-只剩下麻木的我没有了当年的热血
-看那满天飘零的花朵
-在最美丽的时刻凋谢
-有谁会记得这世界它曾经来过
-当初的愿望实现了吗
-事到如今只好祭奠吗
-任岁月风干理想再也找不回真的我
-抬头仰望这满天星河
-那时候陪伴我的那颗
-这里的故事你是否还记得
-如果有明天祝福你亲爱的`;
+    var lyric = `万古
+许嵩
+2013年的时候 我在某地旅游
+在商店里看到一种瓶中虾
+一个圆形的小瓶 大概只有半罐可乐那么大
+瓶底是一些粉红色的砂砾
+只有米粒大小的两只虾在里面游来游去
+我在那以前从没见过那么小的虾
+虾的身子是红色的 轻晃瓶身
+它们受到惊吓 就会变成透明的
+需要过很久才会恢复红色
+店家说 它们是刚出生 一般可以活六个月
+它们不需要被投喂食物 瓶里的水就是它们的特制营养液
+于是我买下 带回了家
+把瓶子放在朝南的柜子上
+想起的时候就会凑过去看看 虽然我很少想起
+过了才一个月 虾死了一只
+小小的身躯悬浮在水里 通体透明
+后来干脆消失不见了
+那时候我不知道它是自动解体了
+还是沉入砂砾 还是被同伴吃了
+我想 这同伴 它应该也活不了多久了吧
+它每天在瓶子里绕着瓶壁转啊 转啊 转啊
+不吃不喝 也不用排泄
+没有玩耍 也没有工作
+没有生病 也谈不上健康
+不知道有没有快乐和悲伤
+就只是活着 在瓶子里活着
+直到2018年秋天 它才迎来死亡 享年五岁
+这寿命远远超过了我的预期
+小小一只 漂浮在营养液里
+身子透明了 就像它五年前的同伴那样
+只有我知道 它在这个世界上活过
+隔了一小会再看它 它也从瓶子里消失不见了
+这瓶子至今放在朝南的柜子上`;
     // var lyric = `测试歌曲`;
     var rows = lyric.split(/\n/);
     const chineseRegex = /^[\u4e00-\u9fa5]+$/;
     const englishRegex = /^[A-Za-z]$/;
+    const numRegex = /^\d$/
     let table = document.getElementById('displayTable');
     var charsMap = [];
     var charsIndex = 0;
@@ -69,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let j = 0; j < rows[i].length; j++) {
             var textCell = textRow.insertCell();
             var char = document.createElement('span');
-            if (chineseRegex.test(rows[i][j]) || englishRegex.test(rows[i][j])) {
+            if (chineseRegex.test(rows[i][j]) || englishRegex.test(rows[i][j]) || numRegex.test(rows[i][j])) {
                 char.id = charsIndex;
                 charsMap[charsIndex] = rows[i][j];
                 charsIndex++;
