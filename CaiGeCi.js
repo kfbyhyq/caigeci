@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `老
+    var lyric = `老男孩
 筷子兄弟
 那是我日夜思念深深爱着的人呐
 到底我该如何表达
@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
 曾经志在四方少年羡慕南飞的雁
 各自奔前程的身影匆匆渐行渐远
 未来在哪里平凡啊谁给我答案
-那时陪伴我的人啊你们如今在何方我曾经爱过的人啊现在是什么模样
+那时陪伴我的人啊你们如今在何方
+我曾经爱过的人啊现在是什么模样
 当初的愿望实现了吗
 事到如今只好祭奠吗
 任岁月风干理想再也找不回真的我
