@@ -7,49 +7,64 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `光辉岁月
-Beyond
-钟声响起归家的讯号
-在他生命里 仿佛带点唏嘘
-黑色肌肤给他的意义
-是一生奉献 肤色斗争中
-年月把拥有变做失去
-疲倦的双眼带着期望
-今天只有残留的躯壳
-迎接光辉岁月
-风雨中抱紧自由
-一生经过彷徨的挣扎
-自信可改变未来
-问谁又能做到
-可否不分肤色的界限
-愿这土地里 不分你我高低
-缤纷色彩闪出的美丽
-是因它没有 分开每种色彩
-年月把拥有变做失去
-疲倦的双眼带着期望
-今天只有残留的躯壳
-迎接光辉岁月
-风雨中抱紧自由
-一生经过彷徨的挣扎
-自信可改变未来
-问谁又能做到
-今天只有残留的躯壳
-迎接光辉岁月
-风雨中抱紧自由
-一生经过彷徨的挣扎
-自信可改变未来
-问谁又能做到
-今天只有残留的躯壳
-迎接光辉岁月
-风雨中抱紧自由
-一生经过彷徨的挣扎
-自信可改变未来
-问谁又能做到
-今天只有残留的躯壳
-迎接光辉岁月
-风雨中抱紧自由
-一生经过彷徨的挣扎
-自信可改变未来`;
+    var lyric = `男孩别哭
+海龟先生
+我跟你描述一个灵魂
+它拥有不谢的青春
+每当夜色降临
+就会轻轻歌唱
+它唱着一个新鲜的故事
+里面的人们相互微笑
+是不是每个夜晚都要这样
+为了爱
+去用清醒交换
+男孩别哭
+美丽世界的孤儿
+可我的心
+我的家
+在哪里
+在哪里呢我的朋友
+静静地听
+有个声音在说爱你
+闭上眼
+跟随她
+跟随她
+就像跟着希望
+那些城市上空飘着一颗颗不安的心
+她一定也曾在这儿跳过欢快的舞蹈
+清风吹来让我感到一阵迷醉
+那婆娑的身影
+太阳般光洁
+那些男孩一次次的叫着寂寞妈妈
+爱是否能抚平他们内心的内心的伤痕
+孤独的人呐
+我带上你走
+boy boy boy isolation bye bye bye bye bye
+One night stand
+Dance dance dance in nowhere
+Dont dont dont dont dont be afraid
+boy boy boy isolation bye bye bye bye bye
+One night stand
+Dance dance dance in nowhere
+Dont dont dont dont dont be afraid
+这是一个放肆狂妄的年代
+我们的身体
+怎能时刻拥抱在一起
+去见证这样的爱情
+早已筋疲力尽
+你脸上尽管挂着深深的泪痕
+我的心 我的爱
+还是跟着梦想远走
+去寻找另一个生命
+它会带上我走
+boy boy boy isolation bye bye bye bye bye
+One night stand
+Dance dance dance in nowhere
+Dont dont dont dont dont be afraid
+boy boy boy isolation bye bye bye bye bye
+One night stand
+Dance dance dance in nowhere
+Dont dont dont dont dont be afraid`;
     // var lyric = `测试歌曲`;
     var rows = lyric.split(/\n/);
     const chineseRegex = /^[\u4e00-\u9fa5]+$/;
