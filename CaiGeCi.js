@@ -7,64 +7,59 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
 
-    var lyric = `男孩别哭
-海龟先生
-我跟你描述一个灵魂
-它拥有不谢的青春
-每当夜色降临
-就会轻轻歌唱
-它唱着一个新鲜的故事
-里面的人们相互微笑
-是不是每个夜晚都要这样
-为了爱
-去用清醒交换
-男孩别哭
-美丽世界的孤儿
-可我的心
-我的家
-在哪里
-在哪里呢我的朋友
-静静地听
-有个声音在说爱你
-闭上眼
-跟随她
-跟随她
-就像跟着希望
-那些城市上空飘着一颗颗不安的心
-她一定也曾在这儿跳过欢快的舞蹈
-清风吹来让我感到一阵迷醉
-那婆娑的身影
-太阳般光洁
-那些男孩一次次的叫着寂寞妈妈
-爱是否能抚平他们内心的内心的伤痕
-孤独的人呐
-我带上你走
-boy boy boy isolation bye bye bye bye bye
-One night stand
-Dance dance dance in nowhere
-Dont dont dont dont dont be afraid
-boy boy boy isolation bye bye bye bye bye
-One night stand
-Dance dance dance in nowhere
-Dont dont dont dont dont be afraid
-这是一个放肆狂妄的年代
-我们的身体
-怎能时刻拥抱在一起
-去见证这样的爱情
-早已筋疲力尽
-你脸上尽管挂着深深的泪痕
-我的心 我的爱
-还是跟着梦想远走
-去寻找另一个生命
-它会带上我走
-boy boy boy isolation bye bye bye bye bye
-One night stand
-Dance dance dance in nowhere
-Dont dont dont dont dont be afraid
-boy boy boy isolation bye bye bye bye bye
-One night stand
-Dance dance dance in nowhere
-Dont dont dont dont dont be afraid`;
+    var lyric = `水手
+郑智化
+苦涩的沙 吹痛脸庞的感觉
+像父亲的责骂 母亲的哭泣
+永远难忘记
+年少的我 喜欢一个人在海边
+卷起裤管光着脚丫 踩在沙滩上
+总是幻想海洋的尽头有另一个世界
+总是以为勇敢的水手是真正的男儿
+总是一副弱不禁风孬种的样子
+在受人欺负的时候 总是听见水手说
+他说 风雨中 这点痛算什么
+擦干泪 不要怕
+至少我们还有梦
+他说 风雨中 这点痛算什么
+擦干泪 不要问 为什么
+长大以后 为了理想而努力
+渐渐地忽略了父亲母亲和故乡的消息
+如今的我 生活就像在演戏
+说着言不由衷的话
+戴着伪善的面具
+总是拿着微不足道的成就来骗自己
+总是莫名其妙感到一阵的空虚
+总是靠一点酒精的麻醉才能够睡去
+在半睡半醒之间仿佛又听见水手说
+他说 风雨中 这点痛算什么
+擦干泪 不要怕
+至少我们还有梦
+他说 风雨中 这点痛算什么
+擦干泪 不要问 为什么
+寻寻觅觅 寻不到活着的证据
+都市的柏油路太硬 踩不出足迹
+骄傲无知的现代人 不知道珍惜
+那一片被文明糟蹋过的海洋和天地
+只有远离人群才能找回我自己
+在带着咸味的空气中自由的呼吸
+耳畔又传来汽笛声和水手的笑语
+永远在内心的最深处 听见水手说
+他说 风雨中 这点痛算什么
+擦干泪 不要怕
+至少我们还有梦
+他说 风雨中 这点痛算什么
+擦干泪 不要问 为什么
+他说 风雨中 这点痛算什么
+擦干泪 不要怕
+至少我们还有梦
+他说 风雨中 这点痛算什么
+擦干泪 不要问 为什么
+他说 风雨中 这点痛算什么
+擦干泪 不要怕
+至少我们还有梦
+他说 风雨中 这点痛算什么
+擦干泪 不要问 为什么`;
     // var lyric = `测试歌曲`;
     var rows = lyric.split(/\n/);
     const chineseRegex = /^[\u4e00-\u9fa5]+$/;
