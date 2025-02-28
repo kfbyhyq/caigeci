@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.fontSize = `${fontSize}px`;
     document.getElementById('guess').style.fontSize = `${fontSize}px`;
     document.getElementById('confirm').style.fontSize = `${fontSize}px`;
+    document.getElementById('share').style.fontSize = `${fontSize}px`;
 
-    // var lyric = `江南`;
     // var lyric = `测试歌曲`;
     var lyric = lyricInput();
     var rows = lyric.split(/\n/);
@@ -49,6 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
             guessProcess();
         }
     };
+    document.getElementById('share').addEventListener('click', function() {
+        var shareText = '来挑战！我用'
+        + document.getElementById('guessNum').textContent
+        + '个字猜出这首歌，你能比我少吗？\nhttps://kfbyhyq.github.io/caigeci/';
+        navigator.clipboard.writeText(shareText).then(() => {
+            document.getElementById('copied').style.visibility = 'visible';
+        });
+    });
 
     function guessProcess() {
         document.getElementById('success').style.display = 'none';
@@ -95,6 +103,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(titleLeft);
                     if (titleLeft.length == 0) {
                         document.getElementById('done').style.display = 'inline';
+                        document.getElementById('share').style.display = 'inline';
+                        document.getElementById('copied').style.display = 'inline';
                         document.getElementById('confirm').style.pointerEvents = 'none';
                         let cells = table.getElementsByClassName('zi');
                         for (let i = 0; i < cells.length; i++) {
