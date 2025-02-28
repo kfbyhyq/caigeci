@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
     document.getElementById('share').addEventListener('click', function() {
-        var shareText = '来挑战！我用'
+        var shareText = '我用'
         + document.getElementById('guessNum').textContent
-        + '个字猜出这首歌，你能比我少吗？\nhttps://kfbyhyq.github.io/caigeci/';
+        + '个字猜出这首歌！你能比我少吗↓↓↓\nhttps://kfbyhyq.github.io/caigeci/';
         navigator.clipboard.writeText(shareText).then(() => {
             document.getElementById('copied').style.visibility = 'visible';
         });
