@@ -1,6 +1,5 @@
 function lyricInput() {
-    var lyric = `
-必杀技
+    var lyric = `必杀技
 古巨基
 你近来又再有空
 我在防备别发功
